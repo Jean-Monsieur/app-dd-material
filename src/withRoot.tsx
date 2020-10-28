@@ -37,7 +37,6 @@ export function withRoot(Component: any) {
 		const [UiState, setUiState] = useState(UITheme.LIGHT);
 		useEffect(() => {
 			setUiState(currentTheme);
-			console.log(currentTheme.theme);
 		}, [currentTheme]);
 
 		return (
