@@ -24,9 +24,9 @@ function App() {
 	);
 
 	return (
-		<Router history={history}>
-			<div className={classes.root}>
-				<div className={classes.appFrame}>
+		<div className={classes.root}>
+			<div className={classes.appFrame}>
+				<Router history={history}>
 					<AppMainBar
 						isOpen={mobileOpen}
 						onOpenChanged={handleDrawerToggle}
@@ -37,9 +37,9 @@ function App() {
 						onOpenChanged={handleDrawerToggle}
 					/>
 					<MainContentRouter />
-				</div>
+				</Router>
 			</div>
-		</Router>
+		</div>
 	);
 }
 

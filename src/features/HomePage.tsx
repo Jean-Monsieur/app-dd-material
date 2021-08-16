@@ -1,14 +1,10 @@
 import {
-	Button,
-	Card,
 	createStyles,
 	FormControl,
 	Grid,
 	Input,
 	InputAdornment,
 	InputLabel,
-	Menu,
-	MenuItem,
 	Paper,
 	TextField,
 	Theme,
@@ -16,22 +12,15 @@ import {
 } from "@material-ui/core";
 import { AccountCircle } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/styles";
-import * as React from "react";
-import { HomeBox } from "../components";
+import React from "react";
+
 import DialpadIcon from "@material-ui/icons/Dialpad";
 
+import CategoryIcon from "@material-ui/icons/Category";
+
+import DiceSelector from "../components/DiceSelector";
 export function HomePage() {
 	const classes = useStyles();
-
-	const [anchorEl, setAnchorEl] = React.useState(null);
-
-	const handleClick = (event: any) => {
-		setAnchorEl(event.currentTarget);
-	};
-
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
 
 	return (
 		<div className={classes.root}>
@@ -83,7 +72,7 @@ export function HomePage() {
 								InputProps={{
 									startAdornment: (
 										<InputAdornment position="start">
-											<AccountCircle />
+											<CategoryIcon />
 										</InputAdornment>
 									),
 								}}
@@ -106,35 +95,7 @@ export function HomePage() {
 							</FormControl>
 						</Grid>
 						<Grid item xs={12} md={4} sm={6}>
-							<Menu
-								id="simple-menu"
-								anchorEl={anchorEl}
-								keepMounted
-								open={Boolean(anchorEl)}
-								onClose={handleClose}
-							>
-								<MenuItem onClick={handleClose}>
-									Profile
-								</MenuItem>
-								<MenuItem onClick={handleClose}>
-									My account
-								</MenuItem>
-								<MenuItem onClick={handleClose}>
-									Logout
-								</MenuItem>
-							</Menu>
-						</Grid>
-						<Grid item xs={6} sm={3}>
-							<Button
-								fullWidth
-								aria-controls="simple-menu"
-								variant="contained"
-								aria-haspopup="true"
-								color="secondary"
-								onClick={handleClick}
-							>
-								Open Menu
-							</Button>
+							<DiceSelector />
 						</Grid>
 					</Grid>
 				</div>
