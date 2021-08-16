@@ -50,7 +50,7 @@ const DiceSelector: FunctionComponent<DiceSelectorProps> = () => {
 					id="demo-simple-select-outlined"
 					value={selectedDice}
 					onChange={(e) =>
-						setSelectedDice(Dice[e.target.value as Dice])
+						setSelectedDice(Dice[e.target.value.toString()])
 					}
 					label="Dé"
 					autoWidth
